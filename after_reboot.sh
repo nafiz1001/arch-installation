@@ -4,9 +4,9 @@
 set -x
 
 # Unmute with amixer
-sudo amixer sset Master unmute
-sudo amixer sset Speaker unmute
-sudo amixer sset Headphone unmute
-sudo alsactl store
+amixer sset Master unmute
+amixer sset Speaker unmute
+amixer sset Headphone unmute
+alsactl store
 
-sudo timedatectl set-timezone America/New_York
+timedatectl set-timezone America/New_York
