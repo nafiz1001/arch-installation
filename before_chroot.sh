@@ -28,3 +28,4 @@ pacstrap /mnt base linux linux-firmware
 # Fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 
+arch-chroot /mnt < ./after_chroot.sh
