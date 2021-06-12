@@ -40,19 +40,24 @@ systemctl enable dhcpcd
 # Setup sudo
 sed -i -e 's/# \(Defaults targetpw\)/\1/' -e 's/# \(ALL ALL=(ALL) ALL\)/\1/' /etc/sudoers
 
-# Set default speaker
-echo defaults.pcm.card 1 > /home/nafiz/.asoundrc
-echo defaults.ctl.card 1 >> /home/nafiz/.asoundrc
-
 # Setup Git's config
 git config --global user.name 'nafiz1001'
 git config --global user.email 'nafiz.islam1001@gmail.com'
 git config --global init.defaultBranch 'main'
 git config --global core.editor 'vim'
 
-sudo -u nafiz git config --global user.name 'nafiz1001'
-sudo -u nafiz git config --global user.email 'nafiz.islam1001@gmail.com'
-sudo -u nafiz git config --global init.defaultBranch 'main'
-sudo -u nafiz git config --global core.editor 'vim'
-
 chown -R nafiz /home/nafiz
+
+su nafiz <<'EOF'
+cd $HOME
+
+# Set default speaker
+echo defaults.pcm.card 1 > $HOME/.asoundrc
+echo defaults.ctl.card 1 >> $HOME/.asoundrc
+
+# Setup Git's config
+git config --global user.name 'nafiz1001'
+git config --global user.email 'nafiz.islam1001@gmail.com'
+git config --global init.defaultBranch 'main'
+git config --global core.editor 'vim'
+EOF
