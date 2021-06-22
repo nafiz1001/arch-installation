@@ -30,7 +30,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Install more packages
 sed -i -e 's/#\(Color\)/\1/g' -e 's/#\(ParallelDownloads = 5\)/\1/g' /etc/pacman.conf
-pacman --noconfirm -Syu man-db man-pages texinfo sudo linux-headers broadcom-wl-dkms iwd dhcpcd curl openssh vim htop base-devel pacman-contrib git nvidia xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji alsa-utils pulseaudio xclip 
+pacman --noconfirm -Syu man-db man-pages texinfo sudo linux-headers broadcom-wl-dkms iwd dhcpcd curl openssh neovim htop base-devel pacman-contrib git nvidia xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji alsa-utils pulseaudio xclip 
 
 # Enable systemd services
 systemctl enable iwd
@@ -43,7 +43,7 @@ sed -i -e 's/# \(Defaults targetpw\)/\1/' -e 's/# \(ALL ALL=(ALL) ALL\)/\1/' /et
 git config --global user.name 'nafiz1001'
 git config --global user.email 'nafiz.islam1001@gmail.com'
 git config --global init.defaultBranch 'main'
-git config --global core.editor 'vim'
+git config --global core.editor 'nvim'
 
 chown -R nafiz /home/nafiz
 
@@ -58,5 +58,5 @@ echo defaults.ctl.card 1 >> $HOME/.asoundrc
 git config --global user.name 'nafiz1001'
 git config --global user.email 'nafiz.islam1001@gmail.com'
 git config --global init.defaultBranch 'main'
-git config --global core.editor 'vim'
+git config --global core.editor 'nvim'
 EOF
