@@ -30,7 +30,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Install more packages
 sed -i -e 's/#\(Color\)/\1/g' -e 's/#\(ParallelDownloads = 5\)/\1/g' /etc/pacman.conf
-pacman --noconfirm -Syu man-db man-pages texinfo sudo linux-headers broadcom-wl-dkms iwd dhcpcd curl openssh neovim htop base-devel pacman-contrib git nvidia xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji alsa-utils pulseaudio xclip 
+pacman --noconfirm -Syu man-db man-pages texinfo sudo bash-completion linux-headers broadcom-wl-dkms iwd dhcpcd curl openssh neovim htop base-devel pacman-contrib git nvidia xorg xorg-xinit noto-fonts noto-fonts-cjk noto-fonts-emoji alsa-utils pulseaudio xclip 
 
 # Enable systemd services
 systemctl enable iwd
